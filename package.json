@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "express": "^4.17.2",
+    "moment": "^2.29.1",
     "momnet": "^2.29.1",
     "mongoose": "^6.1.9",
     "nodemon": "^2.0.15"
@@ -21,5 +22,6 @@
   "bugs": {
     "url": "https://github.com/DanPGolden/Social_Network/issues"
   },
-  "homepage": "https://github.com/DanPGolden/Social_Network#readme"
+  "homepage": "https://github.com/DanPGolden/Social_Network#readme",
+  "devDependencies": {}
 }
