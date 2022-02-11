@@ -4,8 +4,9 @@ const {
     findOneThought,
     createThought,
     createReaction,
-    deleteThought
-} = require('../../controllers/thoughtControllers')
+    deleteThought,
+    deleteReaction
+} = require('../../controllers/thoughtController')
 
 router.route('/').get(allThoughts)
 router.route('/:userId/').post(createThought);
