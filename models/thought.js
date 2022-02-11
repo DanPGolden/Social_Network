@@ -13,7 +13,7 @@ const thoughtSchema = new Schema(
         },
         createdAt: {
             type: Date,
-            default: Date.now,
+            default: Date.now(),
             // get: timestamp => dateFormat(timestamp)
         },
         username: {
@@ -31,10 +31,12 @@ const thoughtSchema = new Schema(
     
 );
 
-thoughtSchema.virtual('reactionCount').get(function() {
-      return this.reactions.length;
-    });
+// thoughtSchema.virtual('reactionCount').get(function() {
+//       return this.reactions.length;
+//     });
 
   //const thought = model('thought', thoughtSchema);
+
+  const Thought = model('Thought', thoughtSchema, 'thoughts');
 
   module.exports = mongoose.model('thought', thoughtSchema);
