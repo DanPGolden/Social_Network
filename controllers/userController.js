@@ -1,19 +1,19 @@
 const { Thought, User} = require('../models');
 
 module.exports = {
-    //find all users ... path /api/users
+    //find all users
     async findAllUsers(req, res) {
         const allUsers = await User.find()
         res.json(allUsers)
   },
 
-    //add a new user ... path /api/users
+    //add a new user 
     async addUser(req, res) {
         const addUser = await User.create(req.body)
         res.json(addUser)
     },
 
-    // find one user by ID ... path /api/users/userId ... populated the thoughts and friends so that the whole object shows when searching on ID
+    // find single user
     async findUser(req, res) {
       try{
       const findOneUser = await User.findOne({ _id: req.params.userId }).populate('thoughts').populate('friends')
@@ -27,7 +27,7 @@ module.exports = {
         };
     },
 
-    // update a user using put.. path /api/users/userId -- req.body will expect username and email
+    // update a user using 
     async updateUser(req, res) {
       try {
           const update = await User.findOneAndUpdate(
@@ -44,7 +44,7 @@ module.exports = {
     },
 
 
-    //delete user ... path /api/users/userId
+    //delete user 
     async deleteUser(req, res) {
         try {
             const findUser = await User.findOne({ _id: req.params.userId })
@@ -60,10 +60,10 @@ module.exports = {
           };
       },  
       
-      //add a new friend .. path of /api/users/userId/friends/friendId
+      //add new friend 
       async createFriend(req, res) {
         try {
-          console.log("IN THE CREATE FRIEND TRY!!!!")
+          console.log("Making friends!!!!")
           const addFriend = await User.findOneAndUpdate(
             { _id: req.params.userId },
             { $addToSet: { friends:  req.params.friendId }},
@@ -78,7 +78,7 @@ module.exports = {
           }
       },
 
-      //Delete a friend .. path of /api/users/userId/friends/friendId
+      //Delete a friend
       async deleteFriend(req, res) {
         try {
           const deleteFriend = await User.findOneAndUpdate(

@@ -2,7 +2,7 @@ const { User, Thought } = require('../models');
 
 module.exports = {
 
-  // find all thoughts .. path of /api/thoughts
+  // find all thoughts 
   async allThoughts(req, res) {
     try{
       const findThoughts = await Thought.find()
@@ -13,7 +13,7 @@ module.exports = {
     }
   },
 
-  // find a thought by a single id .. path of /api/thoughts/thoughtID
+  // find a single thought
   async findOneThought(req, res) {
     try{
     const oneThought = await Thought.findOne({ _id: req.params.thoughtId })
@@ -26,7 +26,7 @@ module.exports = {
     } 
   },
 
-  // creating a new thought /api/thoughts/userID
+  // make new thought
   async createThought(req, res) {
   try {
     const findUser = await User.findById({ _id: req.params.userId })
@@ -49,7 +49,7 @@ module.exports = {
     }
 },
 
-// update a thought using put -- req.body would look for thoughtText -- path /api/thoughts/:thoughtID/:userID
+// update a thought
 async updateThought(req, res) {
   try {
       const thought = await Thought.findOneAndUpdate(
@@ -66,7 +66,7 @@ async updateThought(req, res) {
 },
 
 
-// delete thought by ID ... path /api/thoughts/:thoughtID
+// delete thought 
 async deleteThought(req, res) {
   try {
       const deleteThought = await Thought.findOneAndRemove({ _id: req.params.thoughtId })
@@ -80,7 +80,7 @@ async deleteThought(req, res) {
     };
 },
 
-// creating a new thought /api/thoughts/thoughtId/reactions -- req.body needs reactionText and username
+// making a new thought
 async createReaction(req, res) {
   try {
     const addReaction = await Thought.findOneAndUpdate(
@@ -97,7 +97,7 @@ async createReaction(req, res) {
     }
 },
 
-// Deleting a new thought /api/thoughts/thoughtId/reactions -- 
+// Deleting a new thought
 async deleteReaction(req, res) {
   try {
     const deleteReaction = await Thought.findOneAndUpdate(
