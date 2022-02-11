@@ -4,6 +4,7 @@
     "moment": "^2.29.1",
     "momnet": "^2.29.1",
     "mongoose": "^6.1.9",
+    "mongoose-type-email": "^1.1.2",
     "nodemon": "^2.0.15"
   },
   "scripts": {
@@ -22,6 +23,5 @@
   "bugs": {
     "url": "https://github.com/DanPGolden/Social_Network/issues"
   },
-  "homepage": "https://github.com/DanPGolden/Social_Network#readme",
-  "devDependencies": {}
+  "homepage": "https://github.com/DanPGolden/Social_Network#readme"
 }
