@@ -10,7 +10,9 @@ module.exports = {
     //add a new user 
     async addUser(req, res) {
         const addUser = await User.create(req.body)
+        console.log("req", req)
         res.json(addUser)
+        // console.log("data", res)
     },
 
     // find single user
