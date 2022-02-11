@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Email = require('mongoose-type-email')
-const  Thought  = require('./Thought')
+const  Thought  = require('./thought')
 
 const userSchema = new mongoose.Schema( 
  {
@@ -19,13 +19,13 @@ const userSchema = new mongoose.Schema(
      thoughts: [
          {
          type: mongoose.SchemaTypes.ObjectId,
-         ref: 'Thought',
+         ref: 'thought',
         },
     ],
      friends: [
         {
           type:  mongoose.SchemaTypes.ObjectId,
-          ref: 'User',  
+          ref: 'user',  
         },
      ],
     },
@@ -45,4 +45,4 @@ userSchema.virtual('friendCount').get(function() {
   
   //const User = model('User', userSchema, "users")
   
-  module.exports = mongoose.model('User', userSchema, "users");
+  module.exports = mongoose.model('user', userSchema, "users");

@@ -37,6 +37,6 @@ const thoughtSchema = new Schema(
 
   //const thought = model('thought', thoughtSchema);
 
-  const Thought = model('Thought', thoughtSchema, 'thoughts');
+  const Thought = model('thought', thoughtSchema, 'thoughts');
 
   module.exports = mongoose.model('thought', thoughtSchema);
