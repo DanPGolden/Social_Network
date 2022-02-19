@@ -41,8 +41,8 @@ module.exports = {
           { new: true }
         )
         !updateUser
-        ? res.status(404).json({ message: 'No such user exists' })
-        : res.json("Thought Added")
+        ? res.status(404).json({ message: 'User doesnt exist' })
+        : res.json("Added")
     } catch(error)  {
       console.log(error);
       res.status(500).json(error);
@@ -58,8 +58,8 @@ async updateThought(req, res) {
           { runValidators: true, new: true }
       );
       !thought
-        ? res.status(404).json({ message: 'No such user exists' })
-        : res.json("Thought Added")
+        ? res.status(404).json({ message: 'User doesnt exist' })
+        : res.json("Added")
   } catch (err) {
       res.status(500).json({ message: err });
   }
